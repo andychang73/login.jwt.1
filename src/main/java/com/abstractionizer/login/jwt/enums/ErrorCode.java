@@ -3,6 +3,9 @@ package com.abstractionizer.login.jwt.enums;
 import org.springframework.http.HttpStatus;
 
 public enum ErrorCode implements BaseError{
+    DATA_INSERT_UNSUCCESSFUL(HttpStatus.INTERNAL_SERVER_ERROR, "10000", "Data insert unsuccessful"),
+    USER_NOT_FOUND(HttpStatus.NOT_FOUND, "10001", "User account does not exist"),
+    INVALID_CREDENTIAL(HttpStatus.INTERNAL_SERVER_ERROR, "10002", "Invalid Credential")
     ;
 
 

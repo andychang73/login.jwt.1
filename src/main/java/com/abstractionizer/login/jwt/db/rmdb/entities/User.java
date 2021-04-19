@@ -1,11 +1,11 @@
 package com.abstractionizer.login.jwt.db.rmdb.entities;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
-
-import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Data
@@ -15,7 +15,7 @@ import javax.persistence.Table;
 @Table(name = "user")
 public class User {
 
-    @Id
+    @TableId(type = IdType.AUTO)
     private Integer id;
 
     private String username;

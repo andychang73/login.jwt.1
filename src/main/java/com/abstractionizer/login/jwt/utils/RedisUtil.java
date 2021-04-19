@@ -102,4 +102,8 @@ public class RedisUtil {
             return count;
         }
     }
+
+    public boolean deleteKey(@NonNull String key){
+        return Objects.isNull(key) || this.redisTemplate.delete(key);
+    }
 }

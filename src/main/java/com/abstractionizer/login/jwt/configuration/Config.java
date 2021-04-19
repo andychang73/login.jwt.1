@@ -16,4 +16,5 @@ public class Config {
         template.setConnectionFactory(redisConnectionFactory);
         return template;
     }
+
 }
