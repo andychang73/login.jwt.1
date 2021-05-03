@@ -18,3 +18,15 @@ redis:
     minIdle: 0
     maxActive: -1
     maxWait: 30000
+
+mail:
+  host: smtp.gmail.com
+  username: andy.chang73@gmail.com
+  password: CMoney20200724
+  properties:
+    mail:
+      smtp:
+        auth: true
+        starttls:
+          enable: true
+          required: true

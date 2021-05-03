@@ -10,7 +10,6 @@ import org.springframework.data.redis.core.BoundValueOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.util.ObjectUtils;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
@@ -85,21 +84,6 @@ public class RedisUtil {
         }else {
             Object obj = this.get(key, Object.class);
             return Objects.nonNull(obj);
-        }
-    }
-
-    public Long seCountAndExpiration(@NonNull String key, @NonNull Long count, @NonNull Long time, @NonNull TimeUnit timeUnit){
-        if(key == null){
-            throw new NullPointerException("Key is marked non-null but is null");
-        }else if (count == null){
-            throw new NullPointerException("Count is marked non-null but is null");
-        }else if (time == null){
-            throw new NullPointerException("Time is marked non-null but is null");
-        }else if (timeUnit == null){
-            throw new NullPointerException("Time unit is marked non-null but is null");
-        }else{
-            redisTemplate.opsForValue().set(key, count, time, timeUnit);
-            return count;
         }
     }
 

@@ -7,13 +7,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 import javax.persistence.Table;
+import java.io.Serializable;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Accessors(chain = true)
 @Table(name = "user")
-public class User {
+public class User implements Serializable {
 
     @TableId(type = IdType.AUTO)
     private Integer id;
@@ -21,4 +22,12 @@ public class User {
     private String username;
 
     private String password;
+
+    private String email;
+
+    private String phone;
+
+    private boolean isActivated;
+
+    private Integer status;
 }

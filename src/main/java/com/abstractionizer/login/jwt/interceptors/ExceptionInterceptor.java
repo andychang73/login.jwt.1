@@ -21,7 +21,6 @@ public class ExceptionInterceptor extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(InvalidCredentialException.class)
     public final ResponseEntity<Object> handleInvalidCredentialException(InvalidCredentialException e){
-        log.info("!!!!!");
         CustomExceptionVo response = new CustomExceptionVo(e.getCode(), e.getMsg(), e.getDetails());
         return new ResponseEntity<>(response, e.getHttpStatus());
     }

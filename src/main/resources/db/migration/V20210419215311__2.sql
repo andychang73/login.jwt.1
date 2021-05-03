@@ -1,0 +1,1 @@
+ALTER TABLE user ADD COLUMN status INT DEFAULT 1 AFTER password;

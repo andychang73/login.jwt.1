@@ -4,10 +4,13 @@ import com.abstractionizer.login.jwt.db.rmdb.entities.User;
 import com.abstractionizer.login.jwt.models.bo.CreateUserBo;
 import com.abstractionizer.login.jwt.models.bo.LoginBo;
 import com.abstractionizer.login.jwt.models.dto.UserInfo;
+import com.abstractionizer.login.jwt.models.vo.UserDetailsVo;
 
 public interface UserBusiness {
 
-    User create(CreateUserBo bo);
+    String create(CreateUserBo bo);
 
     UserInfo login(LoginBo bo);
+
+    UserDetailsVo activateAccount(String token);
 }
